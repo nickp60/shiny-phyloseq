@@ -14,6 +14,7 @@ library(png)
 library(RColorBrewer)
 library(ggplot2)
 library(scales)
+library(data.table)
 # Run the auto-installer/updater code:
 #source("install.R", local = TRUE)
 # Default options for app startup
