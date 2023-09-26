@@ -1,4 +1,19 @@
 # load packages
+library(phyloseq)
+library(biomformat)
+library(shiny)
+library(shinythemes)
+library(ggplot2)
+library(networkD3)
+library(genefilter)
+library(grid)
+library(gridExtra)
+library(markdown)
+library(rmarkdown)
+library(png)
+library(RColorBrewer)
+library(ggplot2)
+library(scales)
 # Run the auto-installer/updater code:
 #source("install.R", local = TRUE)
 # Default options for app startup
