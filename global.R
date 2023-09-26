@@ -1,6 +1,6 @@
 # load packages
 # Run the auto-installer/updater code:
-source("install.R", local = TRUE)
+#source("install.R", local = TRUE)
 # Default options for app startup
 source("core/default-parameters.R", local = TRUE)
 # For pasting times into things
@@ -23,7 +23,7 @@ output_phyloseq_print_html = function(physeq){
     )
   )
   # Alternative tag way:
-  #   do.call("p", args = c(list(class="phyloseq-print", 
+  #   do.call("p", args = c(list(class="phyloseq-print",
   #                              sapply(c("alskfjs", "askfjls"), br, simplify = FALSE, USE.NAMES = FALSE))))
 }
 ################################################################################
@@ -33,7 +33,7 @@ output_phyloseq_print_html = function(physeq){
 #
 # This is used by both ui.R and server.R
 #
-# Some helpful details. 
+# Some helpful details.
 #
 # http://shiny.rstudio.com/tutorial/lesson2/
 # http://shiny.rstudio.com/articles/layout-guide.html
@@ -42,19 +42,19 @@ output_phyloseq_print_html = function(physeq){
 ################################################################################
 numericInputRow <- function(inputId, label, value, min = NA, max = NA, step = NA, class="form-control", ...){
   inputTag <- tags$input(id = inputId, type = "number", value = value, class=class, ...)
-  if (!is.na(min)) 
+  if (!is.na(min))
     inputTag$attribs$min = min
-  if (!is.na(max)) 
+  if (!is.na(max))
     inputTag$attribs$max = max
-  if (!is.na(step)) 
+  if (!is.na(step))
     inputTag$attribs$step = step
   div(style="display:inline-block",
-      tags$label(label, `for` = inputId), 
+      tags$label(label, `for` = inputId),
       inputTag)
 }
 textInputRow <- function(inputId, label, value = "", class="form-control", ...){
   div(style="display:inline-block",
-      tags$label(label, `for` = inputId), 
+      tags$label(label, `for` = inputId),
       tags$input(id = inputId, type = "text", value = value, class=class, ...))
 }
 ################################################################################
@@ -62,8 +62,8 @@ textInputRow <- function(inputId, label, value = "", class="form-control", ...){
 ################################################################################
 theme_blank_custom = theme_bw() + theme(
   plot.title = element_text(size = 28),
-  panel.grid.major = element_blank(), 
-  panel.grid.minor = element_blank(), 
+  panel.grid.major = element_blank(),
+  panel.grid.minor = element_blank(),
   axis.text.x      = element_blank(),
   axis.text.y      = element_blank(),
   axis.title.x     = element_blank(),
@@ -111,11 +111,11 @@ fail_gen = function(main = "Change settings and/or click buttons.",
     annotation_custom(image, xmin=-Inf, xmax=Inf, ymin=-Inf, ymax=Inf) +
     annotate("text", 0, 0, size=10, color="black", hjust=0.5, vjust=-1,
              label=subtext) +
-    theme_bw() + 
+    theme_bw() +
     theme(
       plot.title = element_text(size = 28),
-      panel.grid.major = element_blank(), 
-      panel.grid.minor = element_blank(), 
+      panel.grid.major = element_blank(),
+      panel.grid.minor = element_blank(),
       axis.text.x      = element_blank(),
       axis.text.y      = element_blank(),
       axis.title.x     = element_blank(),
@@ -139,7 +139,7 @@ shiny_phyloseq_print = function(p, f=fail_gen()){
   } else {
     print(f)
   }
-}    
+}
 # Define generic function to access/clean variables
 # This especially converts "NULL" to NULL
 av = function(x){
